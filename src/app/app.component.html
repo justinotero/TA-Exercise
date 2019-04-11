@@ -9,6 +9,7 @@
     <li>Each Presentation component dispatches @output() events to TripsComponent.</li>
     <li>Assumed we're not doing UI filtering, so to filter, it still goes to service layer as if it were to make a requests with params.</li>
     <li>Facade is used as an interface to our TripsService(should only deal with http requests), the facade also maintains state and does any mutations on data there. It is implemented as a singleton via providedIn: root, to ensure anywhere else in the app we could subscribe to the data values.</li>
+    <li>No tests :(</li>
   </ul>
 </div>
 
