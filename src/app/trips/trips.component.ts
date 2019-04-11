@@ -24,6 +24,7 @@ export class TripsComponent implements OnInit {
   }
 
   filterOptions(selected: string[]): void {
+    // assuming I needed to pass an id, company, trip, personid
     this.facade.sortTrips('companyId', selected);
   }
 

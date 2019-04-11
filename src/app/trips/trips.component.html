@@ -7,6 +7,9 @@
     <section>
       <app-flight-card *ngFor="let trip of trips" [trip]="trip"
         (viewOption)="viewOption($event)"></app-flight-card>
+      <ng-container *ngIf="!trips.length">
+        <p>No results</p>
+      </ng-container>
     </section>
   </main>
 </ng-container>
