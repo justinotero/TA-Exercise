@@ -1,6 +1,7 @@
 export interface Flights {
   uuid: string;
   flight: Flight;
+  priceInfo: PriceInfo;
 }
 
 export interface Flight {
@@ -51,4 +52,16 @@ export interface Segment {
   estimatedDepartureZonedDateTime: Date;
   estimatedArrivalZonedDateTime: Date;
   stopsString: string;
+}
+
+export interface PriceInfo {
+  tax: number;
+  totalPrice: number;
+  totalNetCharge: number;
+  currency: string;
+}
+
+export interface Options {
+  value: string;
+  selected: boolean;
 }

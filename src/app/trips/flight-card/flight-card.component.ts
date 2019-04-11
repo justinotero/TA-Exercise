@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Flights, PriceInfo, Segment } from '../../state-management/models';
 
 @Component({
   selector: 'app-flight-card',
@@ -7,7 +8,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, OnInit
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FlightCardComponent implements OnInit {
-  @Input() trip = null; // Add Trip Type
+  @Input() trip: Flights = null; // Add Trip Type
 
   @Output() viewOption = new EventEmitter<string>();
 
@@ -16,11 +17,11 @@ export class FlightCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  get firstLeg() { // add type
+  get firstLeg(): Segment {
     return this.trip.flight.flightSegments[0];
   }
 
-  get lastLeg() { // add type
+  get lastLeg(): Segment {
     return this.trip.flight.flightSegments[this.trip.flight.flightSegments.length - 1];
   }
 
@@ -36,7 +37,7 @@ export class FlightCardComponent implements OnInit {
     return this.firstLeg.departureDateAndTime;
   }
 
-  get firstLegDepAirportCode(): Date {
+  get firstLegDepAirportCode(): string {
     return this.firstLeg.departureAirportCode;
   }
 
@@ -44,7 +45,7 @@ export class FlightCardComponent implements OnInit {
     return this.lastLeg.arrivalDateAndTime;
   }
 
-  get lastLegArrAirportCode(): Date {
+  get lastLegArrAirportCode(): string {
     return this.lastLeg.arrivalAirportCode;
   }
 
@@ -52,8 +53,8 @@ export class FlightCardComponent implements OnInit {
     return this.trip.flight.flightSegments.length - 1;
   }
 
-  get price(): number {
-    return this.trip.priceInfo.totalPrice;
+  get priceInfo(): PriceInfo {
+    return this.trip.priceInfo;
   }
 
   get duration(): string {

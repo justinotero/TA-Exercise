@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { Flights } from './models';
+import { Flight, Flights } from './models';
 import { data } from './data';
 // import * as _ from 'lodash';
 
@@ -15,7 +15,7 @@ export class TripsService {
 
   constructor(private http: HttpClient) { }
 
-  getFlights(id: string, airlines?: string[]): Observable<any[]> { // type
+  getFlights(id: string, airlines?: string[]): Observable<Flights[]> { // type
     // const params = {
     //   airlines: airlines.join(',')
     // };

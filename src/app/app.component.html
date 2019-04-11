@@ -1,2 +1,14 @@
 <h1>Trip Actions Exercise</h1>
 <app-trips></app-trips>
+<div class="notes">
+  <h3>Implementation Notes</h3>
+  <ul>
+    <li>Didn't want to load a whole icon library for Arrow icon in dropdown, or for check in check boxes.</li>
+    <li>Not responsive</li>
+    <li>Using Smart/Presentation component pattern. TripsComponent is the smart component, deals with fetching data and passing it to child(presentation components)</li>
+    <li>Each Presentation component dispatches @output() events to TripsComponent.</li>
+    <li>Assumed we're not doing UI filtering, so to filter, it still goes to service layer as if it were to make a requests with params.</li>
+    <li>Facade is used as an interface to our TripsService(should only deal with http requests), the facade also maintains state and does any mutations on data there. It is implemented as a singleton via providedIn: root, to ensure anywhere else in the app we could subscribe to the data values.</li>
+  </ul>
+</div>
+

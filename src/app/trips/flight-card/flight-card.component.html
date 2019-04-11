@@ -19,7 +19,7 @@
       </p>
     </div>
     <div class="actions">
-      <p class="price">{{price | currency: 'USD'}}</p>
+      <p class="price">{{priceInfo.totalPrice | currency: priceInfo.currency}}</p>
       <button (click)="viewOption.emit(trip.uuid)">View</button>
     </div>
   </section>
