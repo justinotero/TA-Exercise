@@ -1,0 +1,25 @@
+<ng-container *ngIf="airlines">
+  <div class="filters" [ngClass]="{'open':open}">
+    <header>
+      <p>Airlines</p>
+      <button (click)="toggle()" [ngClass]="{'open':open}"><span>^</span></button>
+    </header>
+    <!--<form>-->
+      <ul>
+        <!--<li *ngFor="let airline of selectedAirlines.controls; let i=index">-->
+          <!--<label class="container">{{airlines[i].value}}-->
+            <!--<input type="checkbox" [formControl]="airline" (change)="onChange()">-->
+            <!--<span class="checkmark"></span>-->
+          <!--</label>-->
+        <!--</li>-->
+        <li *ngFor="let airline of airlines">
+          <label class="container">{{airline.value}}
+            <input type="checkbox" [(ngModel)]="airline.selected" (change)="onChange()">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+      </ul>
+    <!--</form>-->
+
+  </div>
+</ng-container>

@@ -1,0 +1,27 @@
+/* Should have generated the app with SCSS */
+
+section {
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  height: 95px;
+  width: 95px;
+}
+
+img {
+  width: 100%;
+}
+
+.main-section {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.actions {
+  padding: 10px;
+}

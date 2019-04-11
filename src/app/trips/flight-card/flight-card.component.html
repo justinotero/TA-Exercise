@@ -1,0 +1,32 @@
+<ng-container *ngIf="trip">
+  <section>
+    <div class="image">
+      <!-- Display First Leg Airline Logo Image -->
+      <img [src]="logoUrl" />
+    </div>
+    <div class="main-section">
+      <!-- Display First Leg Airline Name -->
+      <p class="airline-name">{{firstLegDepAirlineName}}</p>
+      <div class="legs">
+        <span class="departure">{{firstLegDepDate | date: 'h:mm a LLL d'}}</span>
+        <span class="dep-code">{{firstLegDepAirportCode}}</span>
+        <span class="stops">{{stops}}</span>
+        <span class="departure">{{lastLegArrDate | date: 'h:mm a LLL d'}}</span>
+        <span class="dep-code">{{lastLegArrAirportCode}}</span>
+      </div>
+      <!-- Display First Leg Depart Time / Airport -->
+      <!-- Display Stops if any -->
+      <!-- Display Last Leg Arrive Time / Airport -->
+    </div>
+    <div class="duration">
+      <!-- Display Total Duration -->
+      <p><span>Duration</span><span>{{duration}}</span></p>
+    </div>
+    <div class="actions">
+      <!-- Display Total Price -->
+      <p class="price">{{price | currency: 'USD'}}</p>
+      <!-- Display Action Button -->
+      <button (click)="viewOption.emit(trip.uuid)">View</button>
+    </div>
+  </section>
+</ng-container>

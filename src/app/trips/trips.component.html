@@ -1,0 +1,12 @@
+<ng-container *ngIf="(trips$ | async) as trips">
+  <main>
+    <aside>
+      <app-airline-filter [airlines]="airlines$ | async"
+        (selectedAirlines)="filterOptions($event)"></app-airline-filter>
+    </aside>
+    <section>
+      <app-flight-card *ngFor="let trip of trips" [trip]="trip"
+        (viewOption)="viewOption($event)"></app-flight-card>
+    </section>
+  </main>
+</ng-container>

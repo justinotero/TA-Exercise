@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Would create a mixin for button styles */
+button {
+  color: red;
+  background: #FFF;
+  border: 2px solid red; /* Would use a color variable here */
+  border-radius: 3px;
+  padding: 5px 30px;
+  cursor: pointer;
+}
